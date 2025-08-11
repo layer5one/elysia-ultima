@@ -1,0 +1,18 @@
+ To utilize tools within your current model (Ollama using Elysia), you can create and use Python functions directly in your prompts or chain responses. Here's a brief explanation of some useful functions provided by Elysia:
+
+1. `append_file(path, content)`: Append text to a UTF-8 file, creating it if missing.
+2. `execute_python(code)`: Execute Python code in-process; return stdout or error traceback. Use `result = ...` to return values.
+3. `execute_shell(command)`: Run a shell command with a short timeout; return stdout or stderr.
+4. `gemini_cli(prompt, model)`: Delegate to GeminiCLI for complex drafting or function creation. Requires GEMINI_API_KEY and `gemini` on PATH.
+5. `read_file(path)`: Read a UTF-8 text file from disk and return its content (truncated if huge).
+6. `write_file(path, content)`: Create or overwrite a UTF-8 text file with provided content. Backs up existing as .bak.
+
+Here's an example of using some functions to create a simple file handling tool:
+
+```
+function read_and_append(filename1, filename2):
+    content = read_file(filename1)
+    write_file(filename2, content)
+
+read_and_append("example.txt", "output.txt")
+```

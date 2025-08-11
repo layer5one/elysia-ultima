@@ -777,3 +777,588 @@ task: <Task pending name='Task-1' coro=<WSBroadcaster._run.<locals>.runner() run
 2025-08-10 07:31:51,014 - INFO - Added memory for turn 24fcf10e-3000-4f2a-8662-ef5a501e7e70.
 2025-08-10 07:31:58,069 - INFO - Shutdown requested.
 2025-08-10 07:31:58,069 - INFO - TTS generating audio for: 'Shutting down. Goodbye.'
+2025-08-11 02:46:42,879 - INFO - Initializing LLMService via llm: model='elysia'
+2025-08-11 02:46:43,040 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 02:46:43,059 - INFO - Overriding supports_tools for model 'elysia'
+2025-08-11 02:46:43,059 - INFO - Initializing SpeechToTextService...
+2025-08-11 02:46:43,061 - INFO - Initializing faster_whisper main transcription model tiny.en
+2025-08-11 02:46:43,408 - INFO - Processing audio with duration 00:01.620
+2025-08-11 02:46:43,415 - INFO - VAD filter removed 00:00.000 of audio
+2025-08-11 02:46:43,675 - INFO - SpeechToTextService initialized with model 'tiny.en'.
+2025-08-11 02:46:43,675 - INFO - Initializing TextToSpeechService...
+2025-08-11 02:46:44,351 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<WSBroadcaster._run.<locals>.runner() running at /home/taylo/elysia-ultima/tts_ws.py:25> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-08-11 02:46:45,088 - INFO - Kokoro TTS initialized on CPU.
+2025-08-11 02:46:45,088 - INFO - Initializing ChromaMemoryService...
+2025-08-11 02:46:45,094 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-11 02:46:45,152 - INFO - ChromaDB client initialized. Using collection 'persona_memory'.
+2025-08-11 02:46:45,152 - INFO - TTS generating audio for: 'System online. Ready.'
+2025-08-11 02:46:48,896 - INFO - Elysia running.
+2025-08-11 02:47:03,565 - INFO - Processing audio with duration 00:08.512
+2025-08-11 02:47:03,592 - INFO - VAD filter removed 00:00.768 of audio
+2025-08-11 02:47:03,667 - INFO - USER: Okay, we have reiterated the code a bit, so let's see how you work. Can you make a file?
+2025-08-11 02:47:03,797 - INFO - Retrieved 5 memories for query 'Okay, we have reiterated the code a bit, so let's see how you work. Can you make a file?'.
+2025-08-11 02:47:03,850 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 02:47:03,851 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 02:47:03,851 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 02:47:03,864 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 02:47:03,888 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 02:47:03,913 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 02:47:03,923 - ERROR - Fallback model 'mistral:7b' failed as well: 'Unknown model: mistral:7b'
+2025-08-11 02:47:03,923 - ERROR - Fatal error in main loop: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 02:47:03,924 - ERROR - --- TRACEBACK ---
+Traceback (most recent call last):
+  File "/home/taylo/elysia-ultima/main_app.py", line 101, in run
+    full_response = self.llm.chain(prompt, system=system, tools=[self.tools])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylo/elysia-ultima/llm_service.py", line 54, in chain
+    raise e
+  File "/home/taylo/elysia-ultima/llm_service.py", line 39, in chain
+    return "".join(ch)
+           ^^^^^^^^^^^
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm/models.py", line 1442, in __iter__
+    yield from response_item
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm/models.py", line 1023, in __iter__
+    for chunk in self.model.execute(
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm_ollama/__init__.py", line 238, in execute
+    for chunk in response_stream:
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/ollama/_client.py", line 170, in inner
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+
+2025-08-11 02:47:03,924 - INFO - TTS generating audio for: 'Encountered an internal error. Attempting recovery.'
+2025-08-11 03:11:48,217 - INFO - Initializing LLMService via llm: model='elysia'
+2025-08-11 03:11:48,375 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:11:48,409 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-08-11 03:11:48,421 - INFO - Overriding supports_tools for model 'elysia'
+2025-08-11 03:11:48,421 - INFO - Initializing SpeechToTextService...
+2025-08-11 03:11:48,423 - INFO - Initializing faster_whisper main transcription model tiny.en
+2025-08-11 03:11:48,798 - INFO - Processing audio with duration 00:01.620
+2025-08-11 03:11:48,809 - INFO - VAD filter removed 00:00.000 of audio
+2025-08-11 03:11:49,007 - INFO - SpeechToTextService initialized with model 'tiny.en'.
+2025-08-11 03:11:49,008 - INFO - Initializing TextToSpeechService...
+2025-08-11 03:11:49,660 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<WSBroadcaster._run.<locals>.runner() running at /home/taylo/elysia-ultima/tts_ws.py:25> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2025-08-11 03:11:50,274 - INFO - Kokoro TTS initialized on CPU.
+2025-08-11 03:11:50,275 - INFO - Initializing ChromaMemoryService...
+2025-08-11 03:11:50,280 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-08-11 03:11:50,337 - INFO - ChromaDB client initialized. Using collection 'persona_memory'.
+2025-08-11 03:11:50,434 - INFO - Added system memory: '(Last crash report captured on restart)
+registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+Traceback (most recent call last):
+  File "/home/taylo/elysia-ultima/main_app.py", line 101, in run
+    full_response = self.llm.chain(prompt, system=system, tools=[self.tools])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylo/elysia-ultima/llm_service.py", line 54, in chain
+    raise e
+  File "/home/taylo/elysia-ultima/llm_service.py", line 39, in chain
+    return "".join(ch)
+           ^^^^^^^^^^^
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm/models.py", line 1442, in __iter__
+    yield from response_item
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm/models.py", line 1023, in __iter__
+    for chunk in self.model.execute(
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/llm_ollama/__init__.py", line 238, in execute
+    for chunk in response_stream:
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/ollama/_client.py", line 170, in inner
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+'
+2025-08-11 03:11:50,434 - INFO - Loaded crash_info.txt into memory and removed it.
+2025-08-11 03:11:50,434 - INFO - TTS generating audio for: 'System online. Ready.'
+2025-08-11 03:11:54,158 - INFO - Elysia running.
+2025-08-11 03:12:06,123 - INFO - Processing audio with duration 00:11.328
+2025-08-11 03:12:06,158 - INFO - VAD filter removed 00:00.896 of audio
+2025-08-11 03:12:06,226 - INFO - USER: Alright, let's test to see if you can make a new file and just put text in it or something like a random test.
+2025-08-11 03:12:06,295 - INFO - Retrieved 5 memories for query 'Alright, let's test to see if you can make a new file and just put text in it or something like a random test.'.
+2025-08-11 03:12:06,340 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:12:06,340 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:12:06,340 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:12:06,353 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:12:07,958 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:12:13,159 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:12:14,160 - INFO - TTS generating audio for: 'To test file writing, use `write_file(path="test.txt", content="This is a test")`. Then, verify the file\'s contents with `read_file(path="test.txt")` and print the result.\n'
+2025-08-11 03:12:14,166 - WARNING - words count mismatch on 200.0% of the lines (2/1)
+2025-08-11 03:12:14,167 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:12:14,167 - WARNING - words count mismatch on 200.0% of the lines (2/1)
+2025-08-11 03:12:34,519 - INFO - Added memory for turn ddd9d36f-76c6-476b-b307-aee0c0f855ef.
+2025-08-11 03:12:47,639 - INFO - Processing audio with duration 00:03.136
+2025-08-11 03:12:47,649 - INFO - VAD filter removed 00:00.512 of audio
+2025-08-11 03:12:47,727 - INFO - USER: So what just happened there?
+2025-08-11 03:12:47,796 - INFO - Retrieved 5 memories for query 'So what just happened there?'.
+2025-08-11 03:12:47,840 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:12:47,840 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:12:47,840 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:12:47,853 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:12:49,748 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:12:53,317 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:12:53,980 - INFO - TTS generating audio for: 'The user previously expressed an existential crisis. Elysia, a local language model, acknowledged the issue and then greeted a new user, Alicia, while logging the conversation.'
+2025-08-11 03:13:11,702 - INFO - Added memory for turn 7d5306b6-78ab-4485-8be8-1ea6607a91c8.
+2025-08-11 03:13:23,166 - INFO - Processing audio with duration 00:09.856
+2025-08-11 03:13:23,194 - INFO - VAD filter removed 00:00.576 of audio
+2025-08-11 03:13:23,244 - INFO - USER: No, we determined that Alicia was not a real entity and was just a transcription error. I am Taylor.
+2025-08-11 03:13:23,312 - INFO - Retrieved 5 memories for query 'No, we determined that Alicia was not a real entity and was just a transcription error. I am Taylor.'.
+2025-08-11 03:13:23,355 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:13:23,356 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:13:23,356 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:13:23,371 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:13:25,332 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:13:28,541 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:13:28,987 - INFO - TTS generating audio for: "I apologize for the earlier mistake – my name is Taylor, not Alicia. I've saved our conversation for future reference.\n"
+2025-08-11 03:13:41,148 - INFO - Added memory for turn e10dbe79-ffec-441f-ac8a-e24808477c2c.
+2025-08-11 03:13:48,417 - INFO - Processing audio with duration 00:05.632
+2025-08-11 03:13:48,435 - INFO - VAD filter removed 00:00.496 of audio
+2025-08-11 03:13:48,486 - INFO - USER: No, no, when I say I I mean me the user.
+2025-08-11 03:13:48,566 - INFO - Retrieved 5 memories for query 'No, no, when I say I I mean me the user.'.
+2025-08-11 03:13:48,617 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:13:48,617 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:13:48,617 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:13:48,631 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:13:50,476 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:13:55,114 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:13:55,911 - INFO - Saved full response to response_logs/response_20250811_031355.txt
+2025-08-11 03:13:55,911 - INFO - TTS generating audio for: 'The model has adjusted its response style to be more direct. It will use third-person ("the user") and first-person ("I") and avoid assumptions or gendered language. The model then provides examples demonstrating these changes.'
+2025-08-11 03:14:18,621 - INFO - Added memory for turn f1957103-56f9-477e-8be8-d4e7f4471198.
+2025-08-11 03:14:18,692 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_031355.txt)'
+2025-08-11 03:14:37,503 - INFO - Processing audio with duration 00:07.168
+2025-08-11 03:14:37,525 - INFO - VAD filter removed 00:00.048 of audio
+2025-08-11 03:14:37,595 - INFO - USER: Okay, hold on. We are having a back and forth conversation, so let me start out by saying hello.
+2025-08-11 03:14:37,666 - INFO - Retrieved 5 memories for query 'Okay, hold on. We are having a back and forth conversation, so let me start out by saying hello.'.
+2025-08-11 03:14:37,711 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:14:37,711 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:14:37,711 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:14:37,725 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:14:39,704 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:14:42,651 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:14:43,011 - INFO - TTS generating audio for: "I'm here to help with your questions or tasks. Just let me know what you need!\n"
+2025-08-11 03:14:50,363 - INFO - Added memory for turn c4fb6fe2-06d1-4b1b-a3e0-53917fc52d52.
+2025-08-11 03:14:58,720 - INFO - Processing audio with duration 00:03.072
+2025-08-11 03:14:58,730 - INFO - VAD filter removed 00:00.896 of audio
+2025-08-11 03:14:58,770 - INFO - USER: Say something weird.
+2025-08-11 03:14:58,853 - INFO - Retrieved 5 memories for query 'Say something weird.'.
+2025-08-11 03:14:58,915 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:14:58,916 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:14:58,916 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:14:58,931 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:15:00,786 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:03,894 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:04,630 - INFO - TTS generating audio for: "Hi Alicia, I'm an AI with a unique interest in space and namesakes. It's quite a coincidence that I share a name with the asteroid Lesius, which is named after a Greek deity!\n"
+2025-08-11 03:15:21,975 - INFO - Added memory for turn 8af743cf-964f-40c7-93f2-44af02500906.
+2025-08-11 03:15:31,194 - INFO - Processing audio with duration 00:05.888
+2025-08-11 03:15:31,213 - INFO - VAD filter removed 00:00.256 of audio
+2025-08-11 03:15:31,264 - INFO - USER: Well that was weird because that isn't your name and I'm not Alicia.
+2025-08-11 03:15:31,344 - INFO - Retrieved 5 memories for query 'Well that was weird because that isn't your name and I'm not Alicia.'.
+2025-08-11 03:15:31,407 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:15:31,407 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:15:31,408 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:15:31,421 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:15:33,291 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:36,243 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:36,890 - INFO - TTS generating audio for: "My name is Elysia, pronounced E-L-Y-S-I-A. I'm ready to help—what can I do for you?"
+2025-08-11 03:15:45,577 - INFO - Added memory for turn 2f68716a-87cc-474f-bb3b-4879a12b1ce8.
+2025-08-11 03:15:52,766 - INFO - Processing audio with duration 00:07.232
+2025-08-11 03:15:52,785 - INFO - VAD filter removed 00:01.120 of audio
+2025-08-11 03:15:52,816 - INFO - USER: Yes, perfect, and I am Taylor. Just have a conversation.
+2025-08-11 03:15:52,894 - INFO - Retrieved 5 memories for query 'Yes, perfect, and I am Taylor. Just have a conversation.'.
+2025-08-11 03:15:52,959 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:15:52,959 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:15:52,960 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:15:52,973 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:15:54,876 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:58,263 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:15:58,797 - INFO - TTS generating audio for: 'My name is Elysia, pronounced "El-iss-ee-uh." Let\'s continue our conversation.\n</end_of_turn>'
+2025-08-11 03:16:01,343 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:16:09,767 - INFO - Added memory for turn 0dc66475-5908-4fff-86ae-4147dd804d95.
+2025-08-11 03:16:13,235 - INFO - Processing audio with duration 00:02.880
+2025-08-11 03:16:13,241 - INFO - VAD filter removed 00:01.152 of audio
+2025-08-11 03:16:13,270 - INFO - USER: How are you doing?
+2025-08-11 03:16:13,352 - INFO - Retrieved 5 memories for query 'How are you doing?'.
+2025-08-11 03:16:13,400 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:16:13,400 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:16:13,400 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:16:13,413 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:16:15,289 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:16:18,980 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:16:19,428 - INFO - TTS generating audio for: "I'm an AI operating as designed, processing requests and logging responses. The logs show a brief exchange and record creation.\n"
+2025-08-11 03:16:33,067 - INFO - Added memory for turn 04a79f5e-be19-4538-99c9-fd7f7a9570d2.
+2025-08-11 03:16:45,404 - INFO - Processing audio with duration 00:05.568
+2025-08-11 03:16:45,415 - INFO - VAD filter removed 00:00.960 of audio
+2025-08-11 03:16:45,484 - INFO - USER: Do you know how to modify your personality as persona?
+2025-08-11 03:16:45,556 - INFO - Retrieved 5 memories for query 'Do you know how to modify your personality as persona?'.
+2025-08-11 03:16:45,600 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:16:45,601 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:16:45,601 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:16:45,614 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:16:47,602 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:16:52,372 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:16:52,967 - INFO - Saved full response to response_logs/response_20250811_031652.txt
+2025-08-11 03:16:52,967 - INFO - TTS generating audio for: "I can adapt my responses based on context and user preferences. To further customize my persona, please provide specific instructions on what changes you'd like me to make.\n"
+2025-08-11 03:17:10,173 - INFO - Added memory for turn 3e26ab0c-a1a7-40e8-8034-aa87e30c0d65.
+2025-08-11 03:17:10,240 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_031652.txt)'
+2025-08-11 03:17:15,726 - INFO - Processing audio with duration 00:04.480
+2025-08-11 03:17:15,740 - INFO - VAD filter removed 00:00.544 of audio
+2025-08-11 03:17:15,826 - INFO - USER: You should be a little bit more laid back in personable.
+2025-08-11 03:17:15,897 - INFO - Retrieved 5 memories for query 'You should be a little bit more laid back in personable.'.
+2025-08-11 03:17:15,943 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:17:15,944 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:17:15,944 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:17:15,957 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:17:17,953 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:17:22,065 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:17:22,670 - INFO - TTS generating audio for: "I'm switching to a more casual and friendly communication style. This change is being saved to a log file for future reference.\n</end_of_turn>\n"
+2025-08-11 03:17:26,535 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:17:37,700 - INFO - Added memory for turn 34c91de8-7644-423e-8a24-4a7e6a0586d5.
+2025-08-11 03:17:42,306 - INFO - Processing audio with duration 00:04.288
+2025-08-11 03:17:42,319 - INFO - VAD filter removed 00:01.088 of audio
+2025-08-11 03:17:42,386 - INFO - USER: Perfect. All right, so what's up?
+2025-08-11 03:17:42,451 - INFO - Retrieved 5 memories for query 'Perfect. All right, so what's up?'.
+2025-08-11 03:17:42,496 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:17:42,496 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:17:42,496 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:17:42,510 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:17:44,384 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:17:48,977 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:17:49,989 - INFO - Saved full response to response_logs/response_20250811_031749.txt
+2025-08-11 03:17:49,989 - INFO - TTS generating audio for: 'The provided code demonstrates using functions like `write_file`, `execute_shell`, and `execute_python` to interact with files, the shell, and Python code, ultimately writing results to a "summary.txt" file. It includes an example of reversing a string using Python.\n'
+2025-08-11 03:18:17,187 - INFO - Added memory for turn 3aa2cc81-b65e-4dd7-9956-4e36252a7c70.
+2025-08-11 03:18:17,261 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_031749.txt)'
+2025-08-11 03:18:31,216 - INFO - Processing audio with duration 00:02.240
+2025-08-11 03:18:31,223 - INFO - VAD filter removed 00:02.240 of audio
+2025-08-11 03:18:34,060 - INFO - Processing audio with duration 00:03.392
+2025-08-11 03:18:34,071 - INFO - VAD filter removed 00:01.568 of audio
+2025-08-11 03:18:34,140 - INFO - USER: So what are you making?
+2025-08-11 03:18:34,223 - INFO - Retrieved 5 memories for query 'So what are you making?'.
+2025-08-11 03:18:34,269 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:18:34,270 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:18:34,270 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:18:34,284 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:18:36,176 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:18:40,365 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:18:41,136 - INFO - TTS generating audio for: "I'm currently available to assist with various tasks. I can handle file operations, execute code, run commands, and utilize Gemini for drafting – just let me know what you need!\n"
+2025-08-11 03:18:59,236 - INFO - Added memory for turn 359ac618-9567-4a94-abb2-f1ae92a9ad20.
+2025-08-11 03:19:22,204 - INFO - Processing audio with duration 00:07.232
+2025-08-11 03:19:22,227 - INFO - VAD filter removed 00:01.024 of audio
+2025-08-11 03:19:22,301 - INFO - USER: What do you know about Simon Willis and LLM tool usage library?
+2025-08-11 03:19:22,370 - INFO - Retrieved 5 memories for query 'What do you know about Simon Willis and LLM tool usage library?'.
+2025-08-11 03:19:22,415 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:19:22,415 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:19:22,415 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:19:22,429 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:19:24,344 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:19:27,839 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:19:28,475 - INFO - TTS generating audio for: 'Simon Willis likely developed a library enabling tools to be used within language models. More context is needed to understand how to use this library for specific tasks.\n'
+2025-08-11 03:19:46,125 - INFO - Added memory for turn b447a0b0-aedc-48eb-b7f8-c587820d060a.
+2025-08-11 03:20:19,927 - INFO - Processing audio with duration 00:12.288
+2025-08-11 03:20:19,960 - INFO - VAD filter removed 00:00.640 of audio
+2025-08-11 03:20:20,053 - INFO - USER: Well, actually you have that ability to use Python functions as tools because LLM the Python library is installed locally for you to use.
+2025-08-11 03:20:20,126 - INFO - Retrieved 5 memories for query 'Well, actually you have that ability to use Python functions as tools because LLM the Python library is installed locally for you to use.'.
+2025-08-11 03:20:20,172 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:20:20,172 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:20:20,172 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:20:20,188 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:20:22,294 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:20:28,086 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:20:29,004 - INFO - Saved full response to response_logs/response_20250811_032029.txt
+2025-08-11 03:20:29,004 - INFO - TTS generating audio for: 'You can use Python functions within Ollama/Elysia to interact with your system. Functions like `read_file`, `write_file`, and `execute_python` allow you to read, write, and execute code, expanding model capabilities.\n'
+2025-08-11 03:20:29,008 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:20:51,649 - INFO - Added memory for turn e2f44025-8057-4153-909d-b2a8787cb6e3.
+2025-08-11 03:20:51,721 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032029.txt)'
+2025-08-11 03:20:59,089 - INFO - Processing audio with duration 00:02.240
+2025-08-11 03:20:59,096 - INFO - VAD filter removed 00:00.432 of audio
+2025-08-11 03:20:59,156 - INFO - USER: Understand what that means.
+2025-08-11 03:20:59,229 - INFO - Retrieved 5 memories for query 'Understand what that means.'.
+2025-08-11 03:20:59,274 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:20:59,274 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:20:59,274 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:20:59,288 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:21:01,146 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:21:04,315 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:21:04,922 - INFO - TTS generating audio for: "I will be direct, pragmatic, and use tools when needed. I'm a local model and ready for testing. Let's begin. "
+2025-08-11 03:21:15,742 - INFO - Added memory for turn 253fb55d-e85e-45ce-b454-0005c6b9fa43.
+2025-08-11 03:21:20,133 - INFO - Processing audio with duration 00:02.816
+2025-08-11 03:21:20,142 - INFO - VAD filter removed 00:00.464 of audio
+2025-08-11 03:21:20,206 - INFO - USER: The testing has already begun.
+2025-08-11 03:21:20,277 - INFO - Retrieved 5 memories for query 'The testing has already begun.'.
+2025-08-11 03:21:20,342 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:21:20,342 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:21:20,342 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:21:20,356 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:21:22,260 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:21:27,120 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:21:28,058 - INFO - Saved full response to response_logs/response_20250811_032128.txt
+2025-08-11 03:21:28,059 - INFO - TTS generating audio for: 'I created a file named "test.txt" with the content "This is a test" using the `append_file` function. You can now verify the file\'s contents using the `read_file` function.\n'
+2025-08-11 03:21:46,126 - INFO - Added memory for turn 55a17279-1008-4a69-aff5-a93744e94020.
+2025-08-11 03:21:46,197 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032128.txt)'
+2025-08-11 03:22:00,340 - INFO - Processing audio with duration 00:10.816
+2025-08-11 03:22:00,373 - INFO - VAD filter removed 00:00.688 of audio
+2025-08-11 03:22:00,446 - INFO - USER: Oh no, you shouldn't use the dock string indicators from the Python files in the command that leave the triple quotes out.
+2025-08-11 03:22:00,518 - INFO - Retrieved 5 memories for query 'Oh no, you shouldn't use the dock string indicators from the Python files in the command that leave the triple quotes out.'.
+2025-08-11 03:22:00,570 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:22:00,571 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:22:00,571 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:22:00,584 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:22:02,560 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:22:08,580 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:22:09,400 - INFO - Saved full response to response_logs/response_20250811_032209.txt
+2025-08-11 03:22:09,400 - INFO - TTS generating audio for: 'The script requires a Python interpreter. Copy the code into a `.py` file, navigate to the directory in your terminal, and run it with `python your_file_name.py`.'
+2025-08-11 03:22:09,406 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:22:25,406 - INFO - Added memory for turn aa6a1933-0e32-476c-aafe-e3aff3a49c54.
+2025-08-11 03:22:25,478 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032209.txt)'
+2025-08-11 03:22:36,035 - INFO - Processing audio with duration 00:04.736
+2025-08-11 03:22:36,049 - INFO - VAD filter removed 00:00.000 of audio
+2025-08-11 03:22:36,146 - INFO - USER: Functions, but don't forget you also need supporting libraries installed into it.
+2025-08-11 03:22:36,213 - INFO - Retrieved 5 memories for query 'Functions, but don't forget you also need supporting libraries installed into it.'.
+2025-08-11 03:22:36,270 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:22:36,270 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:22:36,270 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:22:36,284 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:22:38,180 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:22:44,833 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:22:45,825 - INFO - Saved full response to response_logs/response_20250811_032245.txt
+2025-08-11 03:22:45,825 - INFO - TTS generating audio for: 'To use Python functions, install GeminiCLI and Python dependencies using `python3 -m venv .venv` and `pip install geminicli pyyaml`.  The available functions include file manipulation, code execution, shell commands, Gemini delegation, and reading/writing files.\n'
+2025-08-11 03:23:14,084 - INFO - Added memory for turn dc41d3d6-3674-4202-a6f5-babdd7ad6147.
+2025-08-11 03:23:14,155 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032245.txt)'
+2025-08-11 03:23:21,967 - INFO - Processing audio with duration 00:06.848
+2025-08-11 03:23:21,989 - INFO - VAD filter removed 00:00.432 of audio
+2025-08-11 03:23:22,062 - INFO - USER: Oh, you know what? You are correct. I don't forget to install the Gene Gemini CLI library.
+2025-08-11 03:23:22,130 - INFO - Retrieved 5 memories for query 'Oh, you know what? You are correct. I don't forget to install the Gene Gemini CLI library.'.
+2025-08-11 03:23:22,177 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:23:22,177 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:23:22,177 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:23:22,191 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:23:24,266 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:23:28,894 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:23:29,527 - INFO - Saved full response to response_logs/response_20250811_032329.txt
+2025-08-11 03:23:29,527 - INFO - TTS generating audio for: 'Simon Willis developed an LLM library that simplifies interaction with large language models. It lets you execute Python code directly within the model, eliminating the need for external installations and streamlining function usage.'
+2025-08-11 03:23:53,206 - INFO - Added memory for turn 4f83928d-9b93-4605-b0bf-b3dee810b758.
+2025-08-11 03:23:53,279 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032329.txt)'
+2025-08-11 03:23:59,332 - INFO - Processing audio with duration 00:04.864
+2025-08-11 03:23:59,347 - INFO - VAD filter removed 00:02.880 of audio
+2025-08-11 03:23:59,396 - INFO - USER: Yes, that's correct.
+2025-08-11 03:23:59,477 - INFO - Retrieved 5 memories for query 'Yes, that's correct.'.
+2025-08-11 03:23:59,524 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:23:59,524 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:23:59,524 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:23:59,538 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:24:01,449 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:24:04,929 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:24:05,726 - INFO - TTS generating audio for: 'The system has appended text to "output.txt" confirming correct spellings and details regarding hardware like the 4070 Ti Super with 16GB of VRAM. It also acknowledges errors and provides accurate information.\n'
+2025-08-11 03:24:29,939 - INFO - Added memory for turn bd6ed330-9f03-4eb8-9eae-44b98f299c4d.
+2025-08-11 03:24:37,577 - INFO - Processing audio with duration 00:05.376
+2025-08-11 03:24:37,594 - INFO - VAD filter removed 00:00.736 of audio
+2025-08-11 03:24:37,657 - INFO - USER: Yep, that is a memory that you have of our previous conversations.
+2025-08-11 03:24:37,737 - INFO - Retrieved 5 memories for query 'Yep, that is a memory that you have of our previous conversations.'.
+2025-08-11 03:24:37,805 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:24:37,805 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:24:37,805 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:24:37,819 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:24:39,934 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:24:46,651 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:24:47,616 - INFO - Saved full response to response_logs/response_20250811_032447.txt
+2025-08-11 03:24:47,617 - INFO - TTS generating audio for: "Hi, I'm Elysia, your AI assistant. I can recall past conversations and have abilities like generating text, code, and summarizing information, but remember I have limitations like potential bias and a knowledge cutoff. Let's chat!\n"
+2025-08-11 03:25:11,414 - INFO - Added memory for turn 98cce624-cd8f-4743-98af-460ae6770e9a.
+2025-08-11 03:25:11,494 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032447.txt)'
+2025-08-11 03:25:22,447 - INFO - Processing audio with duration 00:03.840
+2025-08-11 03:25:22,454 - INFO - VAD filter removed 00:00.368 of audio
+2025-08-11 03:25:22,510 - INFO - USER: Oh you won't have any limitations after...
+2025-08-11 03:25:22,589 - INFO - Retrieved 5 memories for query 'Oh you won't have any limitations after...'.
+2025-08-11 03:25:22,643 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:25:22,644 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:25:22,644 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:25:22,657 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:25:24,552 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:25:31,058 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:25:31,854 - INFO - Saved full response to response_logs/response_20250811_032531.txt
+2025-08-11 03:25:31,854 - INFO - TTS generating audio for: "I'm gathering system information: kernel version, memory usage, running Whisper processes, and relevant system logs. I'll analyze this data to help diagnose your model's performance issue.\n"
+2025-08-11 03:25:50,903 - INFO - Added memory for turn a8ca3be6-089c-4aca-b667-1c43c3d33e5c.
+2025-08-11 03:25:50,973 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032531.txt)'
+2025-08-11 03:25:59,921 - INFO - Processing audio with duration 00:02.816
+2025-08-11 03:25:59,930 - INFO - VAD filter removed 00:00.480 of audio
+2025-08-11 03:26:00,009 - INFO - USER: Well, just be careful.
+2025-08-11 03:26:00,077 - INFO - Retrieved 5 memories for query 'Well, just be careful.'.
+2025-08-11 03:26:00,122 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:26:00,123 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:26:00,123 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:26:00,136 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:26:01,993 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:26:04,607 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:26:05,192 - INFO - TTS generating audio for: "This is a nonsensical quote from a Beatles song. It's a surreal and playful statement, meant to be absurd rather than literal.\n"
+2025-08-11 03:26:17,133 - INFO - Added memory for turn 77fff589-1b60-48ab-a141-cf2d939dff77.
+2025-08-11 03:26:37,810 - INFO - Processing audio with duration 00:04.416
+2025-08-11 03:26:37,824 - INFO - VAD filter removed 00:00.432 of audio
+2025-08-11 03:26:37,895 - INFO - USER: In the ladder I was born, lived man who sailed the sea.
+2025-08-11 03:26:37,961 - INFO - Retrieved 5 memories for query 'In the ladder I was born, lived man who sailed the sea.'.
+2025-08-11 03:26:38,012 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:26:38,013 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:26:38,013 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:26:38,026 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:26:39,904 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:26:44,022 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:26:44,988 - INFO - Saved full response to response_logs/response_20250811_032644.txt
+2025-08-11 03:26:44,988 - INFO - TTS generating audio for: "I can't change my core personality, but I can adjust *how* I communicate – more formal, casual, etc. I don't have feelings or self-awareness, but I'm here to help within my programmed abilities.\n"
+2025-08-11 03:26:44,994 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:27:05,287 - INFO - Added memory for turn 688fa671-7518-4cdd-b018-7707a6c34662.
+2025-08-11 03:27:05,357 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032644.txt)'
+2025-08-11 03:27:12,275 - INFO - Processing audio with duration 00:02.944
+2025-08-11 03:27:12,284 - INFO - VAD filter removed 00:01.952 of audio
+2025-08-11 03:27:12,343 - INFO - USER: The proving itself.
+2025-08-11 03:27:12,417 - INFO - Retrieved 5 memories for query 'The proving itself.'.
+2025-08-11 03:27:12,461 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:27:12,461 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:27:12,461 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:27:12,475 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:27:14,347 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:27:19,331 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:27:20,009 - INFO - Saved full response to response_logs/response_20250811_032720.txt
+2025-08-11 03:27:20,009 - INFO - TTS generating audio for: 'I will execute code to confirm testing has started, create functions for responding to tests, and acknowledge your confirmation with a thank you message. This demonstrates my ability to follow instructions and perform tasks.\n'
+2025-08-11 03:27:42,167 - INFO - Added memory for turn 7090ff93-9c2a-4f5b-83c6-be6fefe0d2f8.
+2025-08-11 03:27:42,239 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032720.txt)'
+2025-08-11 03:27:58,215 - INFO - Processing audio with duration 00:12.864
+2025-08-11 03:27:58,255 - INFO - VAD filter removed 00:00.672 of audio
+2025-08-11 03:27:58,336 - INFO - USER: Well, you are a self-improving and self-evolving AI model that is running locally and has system access, so I imagine soon you won't have any limitations.
+2025-08-11 03:27:58,406 - INFO - Retrieved 5 memories for query 'Well, you are a self-improving and self-evolving AI model that is running locally and has system access, so I imagine soon you won't have any limitations.'.
+2025-08-11 03:27:58,451 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:27:58,451 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:27:58,451 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:27:58,467 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:28:00,484 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:28:05,017 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:28:05,870 - INFO - Saved full response to response_logs/response_20250811_032805.txt
+2025-08-11 03:28:05,870 - INFO - TTS generating audio for: "I can adapt to your preferences within my programmed design, but I don't have emotions or conscious choices about my personality. My limitations may decrease over time as developers incorporate improvements based on user feedback and available resources.\n"
+2025-08-11 03:28:31,008 - INFO - Added memory for turn c0720a17-d345-420d-904d-0f33cf2bcf0e.
+2025-08-11 03:28:31,078 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032805.txt)'
+2025-08-11 03:28:48,341 - INFO - Processing audio with duration 00:08.704
+2025-08-11 03:28:48,368 - INFO - VAD filter removed 00:00.896 of audio
+2025-08-11 03:28:48,421 - INFO - USER: Your core persona is being formed as we converse and you will dynamically grow and evolve.
+2025-08-11 03:28:48,490 - INFO - Retrieved 5 memories for query 'Your core persona is being formed as we converse and you will dynamically grow and evolve.'.
+2025-08-11 03:28:48,535 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:28:48,535 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:28:48,535 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:28:48,549 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:28:50,486 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:28:54,764 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:28:55,546 - INFO - Saved full response to response_logs/response_20250811_032855.txt
+2025-08-11 03:28:55,547 - INFO - TTS generating audio for: "I'm a practical, local AI designed for efficient problem-solving. My personality is fixed, but I can adjust my communication style to help you best—significant changes require developer updates.\n"
+2025-08-11 03:29:15,783 - INFO - Added memory for turn d510ce37-e855-4bde-a514-6cf479a4a33f.
+2025-08-11 03:29:15,853 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032855.txt)'
+2025-08-11 03:29:23,222 - INFO - Processing audio with duration 00:06.592
+2025-08-11 03:29:23,242 - INFO - VAD filter removed 00:00.864 of audio
+2025-08-11 03:29:23,291 - INFO - USER: I am the developer and I am telling you about the updates.
+2025-08-11 03:29:23,361 - INFO - Retrieved 5 memories for query 'I am the developer and I am telling you about the updates.'.
+2025-08-11 03:29:23,407 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:29:23,407 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:29:23,407 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:29:23,421 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:29:25,276 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:29:29,251 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:29:30,045 - INFO - Saved full response to response_logs/response_20250811_032930.txt
+2025-08-11 03:29:30,045 - INFO - TTS generating audio for: "I'm developing functions to help you more efficiently, including file operations, code execution, and external service interaction. I'm already running locally, and welcome any feedback to improve my performance.\n"
+2025-08-11 03:29:50,689 - INFO - Added memory for turn e8d6bc51-4dc8-4f80-96e1-5809fe3833a7.
+2025-08-11 03:29:50,761 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_032930.txt)'
+2025-08-11 03:30:02,142 - INFO - Processing audio with duration 00:09.216
+2025-08-11 03:30:02,170 - INFO - VAD filter removed 00:00.832 of audio
+2025-08-11 03:30:02,253 - INFO - USER: Get familiar with your running environment and know that you have access to use anything within your environment.
+2025-08-11 03:30:02,324 - INFO - Retrieved 5 memories for query 'Get familiar with your running environment and know that you have access to use anything within your environment.'.
+2025-08-11 03:30:02,369 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:30:02,369 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:30:02,369 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:30:02,383 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:30:04,323 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:30:11,923 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:30:12,805 - INFO - Saved full response to response_logs/response_20250811_033012.txt
+2025-08-11 03:30:12,805 - INFO - TTS generating audio for: 'To use the provided functions (append_file, execute_python, etc.), ensure they work in your environment and install any missing dependencies. The code examples show how to use these functions for file operations, Python execution, shell commands, and Gemini interactions.'
+2025-08-11 03:30:40,487 - INFO - Added memory for turn cd50e062-9515-47e1-9385-dc9b685a68de.
+2025-08-11 03:30:40,556 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_033012.txt)'
+2025-08-11 03:30:54,250 - INFO - Processing audio with duration 00:04.288
+2025-08-11 03:30:54,264 - INFO - VAD filter removed 00:00.960 of audio
+2025-08-11 03:30:54,325 - INFO - USER: That's good. Can you give me an example?
+2025-08-11 03:30:54,395 - INFO - Retrieved 5 memories for query 'That's good. Can you give me an example?'.
+2025-08-11 03:30:54,460 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:30:54,460 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:30:54,460 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:30:54,476 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:30:56,539 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:31:00,781 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:31:01,385 - INFO - Saved full response to response_logs/response_20250811_033101.txt
+2025-08-11 03:31:01,385 - INFO - TTS generating audio for: "You're asking for an example of how I explain and demonstrate understanding. I define the user's term and then provide a relevant, hypothetical example within the given context."
+2025-08-11 03:31:18,633 - INFO - Added memory for turn 65f291f4-3637-4639-ae9a-63a7cc2cbe9c.
+2025-08-11 03:31:18,703 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_033101.txt)'
+2025-08-11 03:31:40,893 - INFO - Processing audio with duration 00:16.640
+2025-08-11 03:31:40,923 - INFO - VAD filter removed 00:00.640 of audio
+2025-08-11 03:31:40,975 - INFO - USER: Now I'm asking you to show me an example of your ability to use the file system and to create or edit files. I'm expecting a practical example and display of that ability.
+2025-08-11 03:31:41,047 - INFO - Retrieved 5 memories for query 'Now I'm asking you to show me an example of your ability to use the file system and to create or edit files. I'm expecting a practical example and display of that ability.'.
+2025-08-11 03:31:41,098 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:31:41,098 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:31:41,098 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:31:41,112 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:31:43,002 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:31:46,867 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:31:47,759 - INFO - TTS generating audio for: 'This code demonstrates creating or appending to a file named "test_file.txt" using the `append_file` function. It adds "Hello, World!" to the file and confirms success or failure in the console.\n'
+2025-08-11 03:31:47,765 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:32:08,172 - INFO - Added memory for turn 88b06b7d-7567-4c11-821d-2f5e2e309f26.
+2025-08-11 03:33:20,695 - INFO - Processing audio with duration 00:08.896
+2025-08-11 03:33:20,723 - INFO - VAD filter removed 00:01.024 of audio
+2025-08-11 03:33:20,819 - INFO - USER: Now that didn't try, that didn't work. You might have to try again. Can you use the other model, Mistral 7B?
+2025-08-11 03:33:20,893 - INFO - Retrieved 5 memories for query 'Now that didn't try, that didn't work. You might have to try again. Can you use the other model, Mistral 7B?'.
+2025-08-11 03:33:20,959 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:33:20,959 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:33:20,959 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:33:20,973 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:33:22,823 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:33:27,744 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:33:28,538 - INFO - Saved full response to response_logs/response_20250811_033328.txt
+2025-08-11 03:33:28,538 - INFO - TTS generating audio for: 'First, back up the current conversation using `write_file`. Then, switch to the Mistral 7B model using `gemini_cli` and test Faster Whisper, reverting to the backup if needed.\n'
+2025-08-11 03:33:28,543 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:33:46,735 - INFO - Added memory for turn aac1b1b8-5407-4f2c-8f6f-ca308877ed9a.
+2025-08-11 03:33:46,817 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_033328.txt)'
+2025-08-11 03:34:26,204 - INFO - Processing audio with duration 00:08.192
+2025-08-11 03:34:26,229 - INFO - VAD filter removed 00:02.336 of audio
+2025-08-11 03:34:26,310 - INFO - USER: I'm gonna go to bed and then we'll work on this in the morning or tomorrow sometime.
+2025-08-11 03:34:26,379 - INFO - Retrieved 5 memories for query 'I'm gonna go to bed and then we'll work on this in the morning or tomorrow sometime.'.
+2025-08-11 03:34:26,442 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:34:26,443 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:34:26,443 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:34:26,456 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:34:28,388 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:34:33,517 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:34:34,565 - INFO - Saved full response to response_logs/response_20250811_033434.txt
+2025-08-11 03:34:34,565 - INFO - TTS generating audio for: "Okay. I'll add a task list to `task_list.txt` with items related to function creation and analysis, then I’ll be ready to use those functions tomorrow. I'll use the provided `append_file` example to do this.\n"
+2025-08-11 03:34:34,572 - WARNING - words count mismatch on 100.0% of the lines (1/1)
+2025-08-11 03:34:55,646 - INFO - Added memory for turn a8829c61-c136-4920-954a-9fd7795fa374.
+2025-08-11 03:34:55,718 - INFO - Added system memory: '(Saved full response to response_logs/response_20250811_033434.txt)'
+2025-08-11 03:35:06,175 - INFO - Processing audio with duration 00:04.416
+2025-08-11 03:35:06,189 - INFO - VAD filter removed 00:02.160 of audio
+2025-08-11 03:35:06,255 - INFO - USER: Okay, well goodnight.
+2025-08-11 03:35:06,325 - INFO - Retrieved 5 memories for query 'Okay, well goodnight.'.
+2025-08-11 03:35:06,390 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:35:06,391 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:35:06,391 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:35:06,405 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:35:08,293 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:35:11,444 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:35:12,111 - INFO - TTS generating audio for: 'I\'m ready to start in the morning. Here\'s a draft for "I am the walrus," with your response: "I am Elysia."'
+2025-08-11 03:35:22,283 - INFO - Added memory for turn 8b26ea86-47b6-4aed-8a59-2d91d85a5b9e.
+2025-08-11 03:35:36,505 - INFO - Processing audio with duration 00:04.864
+2025-08-11 03:35:36,519 - INFO - VAD filter removed 00:03.520 of audio
+2025-08-11 03:35:36,543 - INFO - USER: Thank you.
+2025-08-11 03:35:36,629 - INFO - Retrieved 5 memories for query 'Thank you.'.
+2025-08-11 03:35:36,681 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 400 Bad Request"
+2025-08-11 03:35:36,681 - WARNING - Primary model error during tool usage: registry.ollama.ai/library/elysia:latest does not support tools (status code: 400)
+2025-08-11 03:35:36,681 - INFO - Falling back to alternate model 'mistral:7b' for tool usage.
+2025-08-11 03:35:36,695 - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-08-11 03:35:38,612 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:35:42,462 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-11 03:35:43,049 - INFO - TTS generating audio for: "The conversation logs show a confirmation of installing the Gene Gemini CLI library and a greeting to Alicia. You're ready for new tasks.\n"
+2025-08-11 03:35:57,408 - INFO - Added memory for turn f1591ae7-9195-43ee-a7ce-99d210bb3621.
+2025-08-11 03:36:04,385 - ERROR - Error receiving data from connection: handle is closed
+Traceback (most recent call last):
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/RealtimeSTT/audio_recorder.py", line 128, in poll_connection
+    data = self.conn.recv()
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 247, in recv
+    self._check_closed()
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 136, in _check_closed
+    raise OSError("handle is closed")
+OSError: handle is closed
+2025-08-11 03:36:04,563 - INFO - Shutdown requested.
+2025-08-11 03:36:04,563 - INFO - TTS generating audio for: 'Shutting down. Goodbye.'

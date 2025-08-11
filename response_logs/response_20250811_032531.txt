@@ -1,0 +1,25 @@
+ [{"name":"execute_shell","arguments":{"command": "uname -a"}}]
+
+[{"name":"append_file","arguments":{"path": "/tmp/log.txt", "content": "System information:\n`result`\n"}}]
+
+Let's gather some system information first, so I can provide more accurate assistance.
+
+[{"name":"execute_shell","arguments":{"command": "free -h"}}]
+
+[{"name":"append_file","arguments":{"path": "/tmp/log.txt", "content": "\nMemory usage:\n`result`\n"}}]
+
+Now, I'll check the memory usage. If there are any issues affecting the performance of your model, they might be related to that.
+
+[{"name":"execute_shell","arguments":{"command": "top -b -n 1 | grep Whisper"}}]
+
+[{"name":"append_file","arguments":{"path": "/tmp/log.txt", "content": "\nCurrent running Whisper processes:\n`result`\n"}}]
+
+Next, I'll look at the currently running Whisper processes to see if there are any issues with them that might be causing the issue you described.
+
+[{"name":"execute_shell","arguments":{"command": "journalctl -xe | grep Whisper"}}]
+
+[{"name":"append_file","arguments":{"path": "/tmp/log.txt", "content": "\nSystem logs related to Whisper:\n`result`\n"}}]
+
+Finally, I'll examine the system logs for any errors or warnings related to Whisper. This should give us a clearer picture of what might be causing your issue.
+
+After gathering this information, I'll be able to provide more targeted suggestions for improving the performance of your model. In the meantime, please wait for me to analyze the system data.

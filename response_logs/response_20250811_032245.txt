@@ -1,0 +1,27 @@
+ In order for me to perform tasks that require the use of Python functions as tools, I will need both LLM and relevant supporting libraries installed in my environment. Here are some steps to help with that:
+
+1. Install GeminiCLI (if not already done): Follow the instructions on [GeminiCLI GitHub](https://github.com/gemini-platform/geminicli) to install it. Make sure to set the `GEMINI_API_KEY` environment variable with your API key.
+
+2. Install Python dependencies: Create a virtual environment and install the necessary libraries for this assistant using pip. Here's a sample command:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install geminicli pyyaml
+```
+
+Now, with both GeminiCLI and the necessary Python dependencies installed, you can use the following functions to accomplish tasks:
+
+1. `append_file(path, content)`: Append text to a UTF-8 file, creating it if missing.
+
+2. `execute_python(code)`: Execute Python code in-process; return stdout or error traceback.
+
+3. `execute_shell(command)`: Run a shell command with a short timeout; return stdout or stderr.
+
+4. `gemini_cli(prompt, model)`: Delegate to GeminiCLI for complex drafting or function creation. Requires GEMINI_API_KEY and `gemini` on PATH.
+
+5. `read_file(path)`: Read a UTF-8 text file from disk and return its content (truncated if huge).
+
+6. `write_file(path, content)`: Create or overwrite a UTF-8 text file with provided content. Backs up existing as .bak.
+
+Remember that while using these functions, it's essential to ensure the given functions and their dependencies are available for me to work effectively.

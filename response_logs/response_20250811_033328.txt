@@ -1,0 +1,22 @@
+ To switch to the Mistral 7B model and test Faster Whisper with the updated environment:
+
+1. First, we need to save the current conversation as a backup file for later reference. Use the `write_file` function:
+
+```python
+write_file(path="conversation.txt", content=read_file("conversation.txt"))
+```
+
+2. Now, let's switch to the Mistral 7B model using the gemini CLI if it is available in your environment. Use the `gemini_cli` function:
+
+```python
+result = gemini_cli(prompt="Switch to Mistral 7B", model="mistral")
+```
+
+3. After successfully switching models, you can now test Faster Whisper again and continue the conversation in the new environment. If any issues occur during testing, remember that you can revert back to your original conversation by using the `read_file` function:
+
+```python
+# Use the Faster Whisper model here
+
+# In case of errors, revert to the backup conversation
+result = read_file("conversation.txt")
+```

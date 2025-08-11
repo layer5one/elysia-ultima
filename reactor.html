@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOX REACTOR v3.1.1</title>
+  <style>
+    html, body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<canvas id="reactor"></canvas>
+<script>
+  const canvas = document.getElementById("reactor");
+  const ctx = canvas.getContext("2d");
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const trailCanvas = document.createElement("canvas");
+  const trailCtx = trailCanvas.getContext("2d");
+  trailCanvas.width = width;
+  trailCanvas.height = height;
+
+  window.addEventListener("resize", () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    trailCanvas.width = width;
+    trailCanvas.height = height;
+  });
+
+  navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 256;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+
+    const source = audioCtx.createMediaStreamSource(stream);
+    source.connect(analyser);
+
+    const barCount = 64;
+    const smoothing = 0.6;
+    const smoothed = new Array(barCount).fill(0);
+
+    const gainCurve = [];
+    const power = 2.5;
+    for (let i = 0; i < barCount / 2; i++) {
+      const x = i / (barCount / 2);
+      gainCurve[i] = Math.pow(1 - x, power);
+    }
+
+    function drawScanlines() {
+      ctx.save();
+      ctx.globalAlpha = 0.05;
+      ctx.fillStyle = "#111";
+      for (let y = 0; y < height; y += 3) {
+        ctx.fillRect(0, y, width, 1);
+      }
+      ctx.restore();
+    }
+
+    function draw() {
+      requestAnimationFrame(draw);
+      analyser.getByteFrequencyData(dataArray);
+
+      trailCtx.fillStyle = "rgba(0,0,0,0.08)";
+      trailCtx.fillRect(0, 0, width, height);
+
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const barWidth = width / barCount / 2;
+      const maxBarHeight = height / 3;
+
+      trailCtx.save();
+      trailCtx.translate(centerX, centerY);
+
+      for (let i = 0; i < barCount / 2; i++) {
+        const dataIndex = Math.floor((bufferLength / 2) * (i / (barCount / 2)));
+        const raw = dataArray[dataIndex] || 0;
+        const adjusted = raw * gainCurve[i];
+        smoothed[i] = smoothed[i] * smoothing + adjusted * (1 - smoothing);
+
+        const barHeight = (smoothed[i] / 255) * maxBarHeight;
+        const x = i * barWidth;
+
+        trailCtx.beginPath();
+        trailCtx.strokeStyle = "red";
+        trailCtx.lineWidth = barWidth * 0.8;
+        trailCtx.shadowColor = "red";
+        trailCtx.shadowBlur = 4; // Reduced glow
+
+        trailCtx.moveTo(x, 0);      trailCtx.lineTo(x, -barHeight);
+        trailCtx.moveTo(-x, 0);     trailCtx.lineTo(-x, -barHeight);
+        trailCtx.moveTo(x, 0);      trailCtx.lineTo(x,  barHeight);
+        trailCtx.moveTo(-x, 0);     trailCtx.lineTo(-x,  barHeight);
+
+        trailCtx.stroke();
+      }
+
+      trailCtx.restore();
+
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      drawScanlines();
+
+      ctx.filter = "contrast(1.1)";
+      ctx.drawImage(trailCanvas, -1, -1, width + 2, height + 2);
+      ctx.restore();
+    }
+
+    draw();
+  }).catch(err => {
+    console.error("Mic access denied:", err);
+  });
+</script>
+</body>
+</html>

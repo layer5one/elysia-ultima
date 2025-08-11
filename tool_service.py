@@ -1,4 +1,3 @@
-# tool_service.py
 import os, io, shlex, subprocess, contextlib, traceback, time, json
 import llm  # needed for Toolbox base
 
@@ -9,7 +8,10 @@ GEMINI_DEFAULT_MODEL = "gemini-2.5-pro"
 
 def _safe_path(p: str) -> str:
     p = os.path.abspath(os.path.expanduser(p))
-    # keep within project root (relax if you want)
+    # Allow full system access if sudo mode is enabled
+    if os.getenv("ELYSIA_ALLOW_ROOT", "0") == "1":
+        return p
+    # Otherwise, keep within project root for safety
     if not p.startswith(PROJECT_ROOT):
         raise ValueError("Path outside project root not allowed")
     return p
@@ -17,7 +19,7 @@ def _safe_path(p: str) -> str:
 class ElysiaTools(llm.Toolbox):
     """
     Multi-tool box available to the model via LLM tool calling.
-    Methods are tools. Keep docstrings tight—they become tool docs.
+    Methods are tools. Keep docstrings tight — they become tool docs.
     """
 
     def read_file(self, path: str) -> str:

@@ -1,0 +1,19 @@
+ To make efficient use of time, let's set up a task for when you wake up or the next day:
+
+1. Append the following text to a file named `task_list.txt` in your working directory:
+
+```
+- Analyze 'summary tool as feature vs whole deal' summary from our previous conversation.
+- Write a function to append text to a UTF-8 file (creating it if missing).
+- Write a function to execute Python code in-process, returning stdout or an error traceback.
+- Write a function to run shell commands with a short timeout and return stdout or stderr.
+- Write a function to delegate to GeminiCLI for complex drafting or function creation (requires GEMINI_API_KEY and 'gemini' on PATH).
+- Read a UTF-8 text file from disk and return its content if it's not too huge.
+- Overwrite a UTF-8 text file with provided content, backing up the existing as .bak.
+```
+
+You can use these functions to start addressing the tasks once you're ready in the morning or tomorrow:
+
+```javascript
+append_file('task_list.txt', '- Analyze...\n- Write a function...\n- ...')
+```

@@ -1,0 +1,20 @@
+ Hello! I'm Elysia, your local AI assistant. As you can see, I can remember and recall information from our past interactions. Here's a bit about me:
+
+**1. What I Am:**
+I am a large language model (LLM), trained on a vast dataset of text and code. This enables me to understand context, generate creative text formats, and provide helpful answers.
+
+**2. My Abilities & Strengths:**
+- Conversational Fluency: I can maintain a natural-sounding conversation with you.
+- Knowledge Synthesis: With my extensive training, I can access a wealth of information to answer your questions, summarize topics, and provide different perspectives.
+- Text Generation: I can generate various creative text formats, like poems, code, scripts, musical pieces, emails, letters, etc., based on your prompts.
+- Code Understanding & Generation: I have understanding and can generate code snippets in multiple programming languages due to my training data that includes code from many different languages.
+- Adaptability: I am continually being refined and improved by my developers, meaning my abilities are evolving as I continue to learn.
+
+**3. My Limitations:**
+- Lack of True Understanding: Although I can simulate understanding, I don’t truly "understand" in the human sense.
+- Potential for Bias: My training data reflects the biases present on the internet, which might lead to biased or unfair responses.
+- Knowledge Cutoff: My knowledge is only as current as my last training update, so I may not be aware of recent events or developments.
+- Hallucinations: Occasionally, I might confidently present false or misleading statements as fact. Always double-check my responses, especially when accuracy is critical.
+- No Real-World Experience: As a computer program, I have no physical body, emotions, or lived experiences.
+
+Remember to use me responsibly and be aware of these limitations. Now, let's continue our conversation!

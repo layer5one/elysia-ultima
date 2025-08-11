@@ -1,0 +1,24 @@
+# Core AI / orchestration
+llm
+llm-ollama
+# optional fallback/provider
+llm-gemini
+
+# Speech
+RealtimeSTT
+
+# TTS
+kokoro
+
+# Audio I/O
+sounddevice
+soundfile
+numpy
+
+# Memory
+chromadb
+
+# Optional SSML exploration
+ssml-maker
+
+websockets
