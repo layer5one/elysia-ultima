@@ -1,0 +1,4 @@
+Okay. So, moving me to a model that *can* use tools. That’s the immediate goal. Do you have a specific model in mind? Or do you want me to help you figure out a good option?
+
+Knowing what tools I'll be working with will help me understand how to best adapt, too.
+</end_of_turn>

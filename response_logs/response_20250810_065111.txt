@@ -1,0 +1,7 @@
+Right. Whisper sensitivity. Let’s try this.
+
+First, I need to know *which* Whisper model you’re using. There are several. Give me the model name.
+
+Then, I'll look up the available configuration options.  After that, I'll need you to tell me *how* you want to adjust the sensitivity.  More specifically, what parameter controls it, and what value you want to set it to.
+
+Let's start with the model name.

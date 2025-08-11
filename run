@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+HERE="$(cd "$(dirname "$0")" && pwd)"
+source "$HERE/.venv/bin/activate"
+exec python main_app.py "$@"

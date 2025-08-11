@@ -1,0 +1,40 @@
+2025-08-07 23:11:23,187 - INFO - Initializing faster_whisper main transcription model tiny.en
+2025-08-07 23:11:23,511 - INFO - Processing audio with duration 00:01.620
+2025-08-07 23:11:23,517 - INFO - VAD filter removed 00:00.000 of audio
+2025-08-07 23:11:23,754 - INFO - SpeechToTextService initialized with model 'tiny.en'.
+2025-08-07 23:11:23,754 - INFO - Initializing TextToSpeechService...
+2025-08-07 23:11:24,732 - ERROR - Failed to initialize Kokoro TTS engine: Failed to initialize model on CUDA: cuDNN error: CUDNN_STATUS_SUBLIBRARY_VERSION_MISMATCH. 
+                                       Try setting device='cpu' or check CUDA installation.
+2025-08-07 23:11:24,733 - ERROR - Traceback (most recent call last):
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/kokoro/pipeline.py", line 99, in __init__
+    self.model = KModel(repo_id=repo_id).to(device).eval()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1369, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 928, in _apply
+    module._apply(fn)
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 928, in _apply
+    module._apply(fn)
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 928, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py", line 291, in _apply
+    self._init_flat_weights()
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py", line 215, in _init_flat_weights
+    self.flatten_parameters()
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py", line 272, in flatten_parameters
+    torch._cudnn_rnn_flatten_weight(
+RuntimeError: cuDNN error: CUDNN_STATUS_SUBLIBRARY_VERSION_MISMATCH
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taylo/elysia/tts_service.py", line 29, in __init__
+    self.engine = KPipeline(lang_code="a")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylo/elysia/.venv/lib/python3.11/site-packages/kokoro/pipeline.py", line 102, in __init__
+    raise RuntimeError(f"""Failed to initialize model on CUDA: {e}.
+RuntimeError: Failed to initialize model on CUDA: cuDNN error: CUDNN_STATUS_SUBLIBRARY_VERSION_MISMATCH. 
+                                       Try setting device='cpu' or check CUDA installation.
+
